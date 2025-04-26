@@ -1,8 +1,15 @@
 import json
 
 def lambda_handler(event, context):
-    # TODO implement
+    print("Received event: " + json.dumps(event, indent=2))
+    
+    # Example processing
+    message = 'Hello from Lambda & from local and actions!'
+    
+    # Return a response
     return {
         'statusCode': 200,
-        'body': json.dumps('Hello from Lambda from local and GitHub actions!')
+        'body': json.dumps({
+            'message': message
+        })
     }

@@ -4,7 +4,7 @@ def lambda_handler(event, context):
     print("Received event: " + json.dumps(event, indent=2))
     
     # Example processing
-    message = 'Hello from Lambda & from local and actions!'
+    message = 'Hello from Lambda & from local and deployed from GitHub Actions!'
     
     # Return a response
     return {

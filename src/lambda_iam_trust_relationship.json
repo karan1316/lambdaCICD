@@ -4,19 +4,23 @@
         {
             "Effect": "Allow",
             "Principal": {
+                "AWS": "arn:aws:iam::152914900153:user/karan",
                 "Service": "lambda.amazonaws.com"
             },
-            "Action": "sts:AssumeRole"
+            "Action": [
+                "sts:AssumeRole",
+                "sts:TagSession"
+            ]
         },
         {
             "Effect": "Allow",
             "Principal": {
-                "Federated": "arn:aws:iam::{aws-account-number}:oidc-provider/token.actions.githubusercontent.com"
+                "Federated": "arn:aws:iam::152914900153:oidc-provider/token.actions.githubusercontent.com"
             },
             "Action": "sts:AssumeRoleWithWebIdentity",
             "Condition": {
                 "ForAllValues:StringLike": {
-                    "token.actions.githubusercontent.com:sub": "repo:{github-account-name}/*",
+                    "token.actions.githubusercontent.com:sub": "repo:karan1316/*",
                     "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
                 }
             }

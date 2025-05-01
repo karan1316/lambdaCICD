@@ -44,7 +44,7 @@ jobs:
         role-session-name: GitHubActionsLambdaDeployment
 
     - name: Zip the Lambda function
-      run: zip function.zip lambda_function.py
+      run: zip function.zip testFunction
 
     - name: Check if Lambda function exists
       id: check_lambda
